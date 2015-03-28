@@ -1,0 +1,19 @@
+[24-Nov-2014 15:47:51 America/Santiago] PHP Warning:  include(/conexion/conexion.php): failed to open stream: No such file or directory in /home/mesubocl/public_html/proceso/inc.php on line 5
+[24-Nov-2014 15:47:51 America/Santiago] PHP Warning:  include(): Failed opening '/conexion/conexion.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/mesubocl/public_html/proceso/inc.php on line 5
+[24-Nov-2014 15:47:51 America/Santiago] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/mesubocl/public_html/proceso/inc.php on line 6
+[24-Nov-2014 15:47:51 America/Santiago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, null given in /home/mesubocl/public_html/proceso/inc.php on line 7
+[24-Nov-2014 15:51:41 America/Santiago] PHP Fatal error:  Call to undefined function phpsession_start() in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 15:51:59 America/Santiago] PHP Fatal error:  Call to undefined function phpsession_start() in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 15:52:49 America/Santiago] PHP Fatal error:  Call to undefined function phpsession_start() in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 15:54:02 America/Santiago] PHP Fatal error:  Call to undefined function phpsession_start() in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 15:55:51 America/Santiago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 15:56:29 America/Santiago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 16:35:32 America/Santiago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 16:35:32 America/Santiago] PHP Warning:  mysql_result() expects parameter 1 to be resource, boolean given in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 16:35:32 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/mesubocl/public_html/conexion/conexion.php:5) in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 16:37:20 America/Santiago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 16:37:20 America/Santiago] PHP Warning:  mysql_result() expects parameter 1 to be resource, boolean given in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 16:37:30 America/Santiago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 16:37:30 America/Santiago] PHP Warning:  mysql_result() expects parameter 1 to be resource, boolean given in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 16:38:35 America/Santiago] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/mesubocl/public_html/proceso/inc.php on line 1
+[24-Nov-2014 16:38:35 America/Santiago] PHP Warning:  mysql_result() expects parameter 1 to be resource, boolean given in /home/mesubocl/public_html/proceso/inc.php on line 1

@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="keywords" content="admin template, admin dashboard, inbox templte, calendar template, form validation">
+<meta name="author" content="DazeinCreative">
+<meta name="description" content="ORB - Powerfull and Massive Admin Dashboard Template with tonns of useful features">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORB</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<!--Demo Colors Override-->
+<link id="demo-styles" href="css/styles-defaults.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<script type="text/javascript" src="js/vendors/modernizr/modernizr.custom.js"></script>
+
+<link rel="stylesheet" href="css/leaflet.css" />
+<script src="js/leaflet.js"></script>
+<script src="js/mq-map.js?key=Fmjtd%7Cluurnuubnu%2Ca5%3Do5-9wrxq6"></script>
+<script src="js/mq-routing.js?key=Fmjtd%7Cluurnuubnu%2Ca5%3Do5-9wrxq6"></script>
+<script type="text/javascript">
+
+            window.onload = function() {
+                var map,
+                    dir;
+
+                map = L.map('map', {
+                    layers: MQ.mapLayer(),
+                    center: [ -38.7411, -72.5913 ],
+                    zoom: 13
+                });
+
+                dir = MQ.routing.directions();
+
+                dir.route({
+                    locations: [
+                        "-38.73995, -72.57987",
+						"-38.74201, -72.57907",
+						"-38.74295, -72.58155"
+                    ]
+                    
+                });
+
+                CustomRouteLayer = MQ.Routing.RouteLayer.extend({
+                    createStopMarker: function(location, stopNumber) {
+                        var custom_icon,
+                            marker;
+
+                        custom_icon = L.icon({
+                            iconUrl: 'http://www.mapquestapi.com/staticmap/geticon?uri=poi-red_1.png',
+                            iconSize: [0, 0],
+                            iconAnchor: [10, 29],
+                            popupAnchor: [0, -29]
+                        });
+
+                        marker = L.marker(location.latLng, { icon: custom_icon })
+                            .bindPopup(location.adminArea5 + ' ' + location.adminArea3)
+                            .openPopup()
+                            .addTo(map);
+
+                        return marker;
+                    }
+                });
+
+                map.addLayer(new CustomRouteLayer({
+                    directions: dir,
+                    fitBounds: true,
+                    draggable: true,
+                    ribbonOptions: {
+                        draggable: false,
+                        ribbonDisplay: { color: '#CC0000', opacity: 1 },
+                        widths: [ 1 ]
+                    }
+                }));
+				var popup = L.popup();
+
+            }
+
+        </script>
+</head>
+
+<body>
+
+<!--Smooth Scroll-->
+<div class="smooth-overflow"> 
+  <!--Navigation-->
+  <nav class="main-header clearfix" role="navigation"> <a class="navbar-brand" href="index.html"><span class="text-orange">MeSubo.cl</span></a> 
+    
+    <!--Navigation Itself-->
+    
+    <div class="navbar-content"> 
+
+      <!--Main menu-->
+      
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle"><i class="entypo-home"></i> Inicio</button>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="entypo-home"></i> Inicio</button>
+      </div>
+      
+    </div>
+  </nav>
+  
+  <!--/Navigation--> 
+  
+  <!--MainWrapper-->
+  <div class="main-wrap"> 
+    
+    <!--OffCanvas Menu -->
+    <aside class="user-menu"> 
+      
+      <!-- Tabs -->
+      <div class="tabs-offcanvas">
+        <ul class="nav nav-tabs nav-justified">
+          <li class="active"><a href="#userbar-one" data-toggle="tab">Main</a></li>
+          <li><a href="#userbar-two" data-toggle="tab">Users</a></li>
+          <li><a href="#userbar-three" data-toggle="tab">ToDo</a></li>
+        </ul>
+        <div class="tab-content"> 
+          
+          <!--User Primary Panel-->
+          <div class="tab-pane active" id="userbar-one">
+            <div class="main-info">
+              <div class="user-img"><img src="images/users/2-big.jpg" alt="User Picture" /></div>
+              <h1>Anton Durant <small>Administrator</small></h1>
+            </div>
+            <div class="list-group"> <a href="#" class="list-group-item"><i class="fa fa-user"></i>Profile</a> <a href="#" class="list-group-item"><i class="fa fa-cog"></i>Settings</a> <a href="#" class="list-group-item"><i class="fa fa-flask"></i>Projects<span class="badge">2</span></a>
+              <div class="empthy"></div>
+              <a href="#" class="list-group-item"><i class="fa fa-refresh"></i>Updates<span class="badge">5</span></a> <a href="#" class="list-group-item"><i class="fa fa-comment"></i>Messages<span class="badge">12</span></a> <a href="#" class="list-group-item"><i class="fa fa-comments"></i> Comments<span class="badge">45</span></a>
+              <div class="empthy"></div>
+              <a href="#" data-toggle="modal" class="list-group-item lockme"><i class="fa fa-lock"></i> Lock</a> <a data-toggle="modal" href="#" class="list-group-item goaway"><i class="fa fa-power-off"></i> Sign Out</a> </div>
+          </div> 
+          
+        </div>
+      </div>
+      
+      <!-- /tabs --> 
+      
+    </aside>
+    <!-- /Offcanvas user menu--> 
+    
+    <!--Main Menu-->
+    <div class="responsive-admin-menu">
+      <div class="responsive-menu">MeSubo
+        <div class="menuicon"><i class="fa fa-angle-down"></i></div>
+      </div>
+      <ul id="menu">
+        
+        <li> <a class="submenu" href="#" data-id="interface-sub" title="Interface"><i class="entypo-address"></i><span> MicroBuses</span></a> 
+          <!-- Interface Sub-Menu -->
+          <ul id="interface-sub" class="accordion">
+            <li><a href="#" data-id="fonts-sub" title="Linea 1" class="submenu"><i class="entypo"></i><span> Linea 1</span></a>
+              <ul id="fonts-sub">
+                <li><a href="admin-font-awesome.html" title="Awesome Font"><i class="entypo"></i><span> N°1 Troncal</span></a></li>
+                <li><a href="admin-font-glyphicons.html" title="Glyphicons"><i class="entypo"></i><span> N°1 Variante</span></a></li>
+              </ul>
+            </li>
+			<li><a href="#" data-id="fonts-sub2" title="Linea 2" class="submenu"><i class="entypo"></i><span> Linea 2</span></a>
+              <ul id="fonts-sub2">
+                <li><a href="admin-font-awesome.html" title="Awesome Font"><i class="entypo"></i><span> N°2 Troncal</span></a></li>
+                <li><a href="admin-font-glyphicons.html" title="Glyphicons"><i class="entypo"></i><span> N°2 Directo</span></a></li>
+                <li><a href="admin-font-entypo.html" title="Entypo"><i class="entypo"></i><span> N°2 Variante</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+		
+		
+		<li> <a class="submenu" href="#" data-id="colectivos" title="Interface"><i class="entypo-address"></i><span> Colectivos</span></a> 
+          <!-- Interface Sub-Menu -->
+          <ul id="colectivos" class="accordion">
+            <li><a href="#" data-id="13" title="Linea 1" class="submenu"><i class="entypo"></i><span> Linea 13</span></a>
+              <ul id="13">
+                <li><a href="admin-font-awesome.html" title="Awesome Font"><i class="entypo"></i><span> N°13</span></a></li>
+                <li><a href="admin-font-glyphicons.html" title="Glyphicons"><i class="entypo"></i><span> N°13 - A</span></a></li>
+              </ul>
+            </li>
+			<li><a href="#" title="Linea 2" class="submenu2"><i class="entypo"></i><span> Linea 111</span></a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+    <!--/MainMenu-->
+    
+    <div class="content-wrapper"> 
+      <!--Content Wrapper--><!--Horisontal Dropdown-->
+      <nav class="cbp-hsmenu-wrapper" id="cbp-hsmenu-wrapper">
+        <div class="cbp-hsinner">
+          <ul class="cbp-hsmenu">
+            
+          </ul>
+        </div>
+      </nav>
+
+      
+      <!-- Widget Row Start grid -->
+      <div class="row" id="powerwidgets">
+        
+       
+        <!-- /Inner Row Col-md-6 -->
+        
+        <div class="col-xs-12 bootstrap-grid"> 
+			<div id="titleMap">LINEA 1 TRONCAL</div>
+          <!-- New widget -->
+          <div id='map' class='mapQuest'></div>
+          <!-- End Widget --> 
+          
+        </div>
+        <!-- /Inner Row Col-md-6 --> 
+      </div>
+      <!-- /Widgets Row End Grid--> 
+    </div>
+    <!-- / Content Wrapper --> 
+  </div>
+  <!--/MainWrapper--> 
+</div>
+<!--/Smooth Scroll--> 
+
+<!--Scripts--> 
+<!--GMaps--> 
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+
+<!--JQuery--> 
+<script type="text/javascript" src="js/vendors/jquery/jquery.min.js"></script> 
+<script type="text/javascript" src="js/vendors/jquery/jquery-ui.min.js"></script> 
+
+<!--GMap--> 
+<script type="text/javascript" src="js/vendors/gmap/jquery.gmap.js"></script> 
+
+<!--NanoScroller--> 
+<script type="text/javascript" src="js/vendors/nanoscroller/jquery.nanoscroller.min.js"></script> 
+
+<!--Sparkline--> 
+<script type="text/javascript" src="js/vendors/sparkline/jquery.sparkline.min.js"></script> 
+
+<!--Horizontal Dropdown--> 
+<script type="text/javascript" src="js/vendors/horisontal/cbpHorizontalSlideOutMenu.js"></script> 
+<script type="text/javascript" src="js/vendors/classie/classie.js"></script> 
+
+<!--PowerWidgets--> 
+<script type="text/javascript" src="js/vendors/powerwidgets/powerwidgets.min.js"></script> 
+
+<!--Morris Chart--> 
+<script type="text/javascript" src="js/vendors/raphael/raphael-min.js"></script> 
+<script type="text/javascript" src="js/vendors/morris/morris.min.js"></script> 
+
+<!--FlotChart--> 
+<script type="text/javascript" src="js/vendors/flotchart/jquery.flot.min.js"></script> 
+<script type="text/javascript" src="js/vendors/flotchart/jquery.flot.resize.min.js"></script> 
+<script type="text/javascript" src="js/vendors/flotchart/jquery.flot.axislabels.js"></script> 
+<script type="text/javascript" src="js/vendors/flotchart/jquery.flot-tooltip.js"></script> 
+
+<!--Chart.js--> 
+<script type="text/javascript" src="js/vendors/chartjs/chart.min.js"></script> 
+
+<!--Bootstrap--> 
+<script type="text/javascript" src="js/vendors/bootstrap/bootstrap.min.js"></script> 
+
+<!--Vector Map--> 
+<script type="text/javascript" src="js/vendors/vector-map/jquery.vmap.min.js"></script> 
+<script type="text/javascript" src="js/vendors/vector-map/jquery.vmap.sampledata.js"></script> 
+<script type="text/javascript" src="js/vendors/vector-map/jquery.vmap.world.js"></script> 
+
+<!--Main App--> 
+<script type="text/javascript" src="js/scripts.js"></script>
+
+<!--Switcher-->
+
+<script type="text/javascript" src="js/vendors/demo-switcher/switcher.load.js"></script>  
+ 
+
+<!--/Scripts-->
+
+</body>
+</html>
